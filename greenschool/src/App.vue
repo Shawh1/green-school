@@ -1,43 +1,26 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+   <v-tabs
+    fixed-tabs
+    background-color="indigo"
+    dark
+  >
+    <v-tab>
+      Option
+    </v-tab>
+    <v-tab>
+      Another Selection
+    </v-tab>
+    <v-tab>
+      Items
+    </v-tab>
+    <v-tab>
+      Another Screen
+    </v-tab>
+  </v-tabs>
 
     <v-content>
+      <carousel />
       <HelloWorld/>
     </v-content>
   </v-app>
@@ -45,16 +28,22 @@
 
 <script>
 import HelloWorld from './components/HelloWorld';
+import carousel from './components/carousel';
 
 export default {
   name: 'App',
 
   components: {
     HelloWorld,
+    carousel
   },
 
   data: () => ({
-    //
+    tab: null,
+      items: [
+        'web', 'shopping', 'videos', 'images', 'news',
+      ],
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   }),
 };
 </script>
